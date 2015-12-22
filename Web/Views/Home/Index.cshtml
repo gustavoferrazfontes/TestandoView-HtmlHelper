@@ -1,0 +1,33 @@
+﻿@model Web.ViewModel.AcessoViewModel
+@{
+    ViewBag.Title = "Home";
+}
+
+<div class="jumbotron">
+    <h1>Testando sua view</h1>
+    <p class="lead">Removendo complexidade da sua view </p>
+    <p><a href="http://gustavofontes.net" class="btn btn-primary btn-lg">Veja mais &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>Teste</h2>
+    </div>
+    <div class="col-md-12">
+        @using (Html.BeginForm("AcessoDisponivel", "Home", FormMethod.Post))
+        {
+            <div class="form-group">
+                <div class="radio-inline">
+                    <input type="radio" name="status" value="Disponivel" /><label>Acesso disponivel</label><br />
+                    <input type="radio" name="status" value="Bloqueado" /><label>Acesso bloqueado</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <p><input type="submit" class="btn btn-primary"></p>
+            </div>
+        }
+
+    </div>
+    @Html.Partial("_Resultado", Model)
+
+</div>
